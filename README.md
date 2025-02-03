@@ -9,8 +9,7 @@ The collective effort of the Project Pokémon (and other) communities to preserv
 1. Extract the contents to a folder `mgdb` in the same folder as `PKHeX.exe` or `SysBot.exe`.
 
 #### • PKM creation with PKHeX
-1. Find the specific wondercard or Pokémon file.
-1. Drag/drop the file onto PKHeX in the spot where you want that Pokémon.
+a1. Drag/drop the file onto PKHeX in the spot where you want that Pokémon.
 
 #### • In-game Mystery Gift redemption
 * For Gen 3 events, use either the [WC3 Plugin](https://projectpokemon.org/home/files/file/4161-pkhex-plugin-wc3-plugin/) or the [Mystery Gift Tool](https://projectpokemon.org/home/forums/topic/39184-gen-iii-mystery-gift-tool-nintendo-events-wondercards-e-trainer-cards-and-e-berry-editor-and-more/)
