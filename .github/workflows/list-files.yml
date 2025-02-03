@@ -23,7 +23,7 @@ jobs:
         $date = (Get-Date -Format "yyyy-MM-dd_HH-mm-ss")
         Get-ChildItem -Recurse | Select-Object FullName | Out-File "file-list-$date.txt"
 
-    - name: Upload File List as Artifact
+    - name: Upload File List as Artifacta
       uses: actions/upload-artifact@v4
       with:
         name: file-list
