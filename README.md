@@ -9,8 +9,7 @@ The collective effort of the Project Pokémon (and other) communities to preserv
 1. Extract the contents to a folder `mgdb` in the same folder as `PKHeX.exe` or `SysBot.exe`.
 
 #### • PKM creation with PKHeX
-1. Find the specific wondercard or Pokémon file.
-1. Drag/drop the file onto PKHeX in the spot where you want that Pokémon.
+a1. Drag/drop the file onto PKHeX in the spot where you want that Pokémon.
 
 #### • In-game Mystery Gift redemption
 * For Gen 3 events, use either the [WC3 Plugin](https://projectpokemon.org/home/files/file/4161-pkhex-plugin-wc3-plugin/) or the [Mystery Gift Tool](https://projectpokemon.org/home/forums/topic/39184-gen-iii-mystery-gift-tool-nintendo-events-wondercards-e-trainer-cards-and-e-berry-editor-and-more/)
@@ -20,7 +19,6 @@ The collective effort of the Project Pokémon (and other) communities to preserv
 #### • Import Raid Events
 * For Sword/Shield raids, follow our [PKHeX Block Editing tutorial](https://projectpokemon.org/tutorials/save-editing/gen-8_157/block-editing-r106/). The blocks to be imported are labeled as follows: `*Object KDropRewards`, `*Object KDaiEncount`, `*Object KBonusRewards`, `*Object KNormalEncount`, `*Object KNormalEncountRigel1`, `*Object KNormalEncountRigel2`. 
 * For Scarlet/Violet raids, follow the [tutorial for importing Raid Events](https://projectpokemon.org/home/tutorials/save-editing/gen-9/gen-9-specific-edits-importing-poké-portal-news-raid-events-r124/).
-
 #### • Import SV Mass Outbreaks Events
 * Follow our [tutorial for importing Mass Outbreak Events](https://projectpokemon.org/home/tutorials/save-editing/gen-9/gen-9-specific-edits-importing-mass-outbreak-events-r127/)
 
