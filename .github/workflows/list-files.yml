@@ -1,5 +1,9 @@
 name: List Files and Upload Artifact
 
+permissions:
+  contents: read
+  actions: read
+
 on:
   push:
     branches:
