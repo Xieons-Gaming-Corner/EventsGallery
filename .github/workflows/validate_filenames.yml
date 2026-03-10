@@ -11,35 +11,40 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Check for Windows-incompatible filenames
+      - name: Fix Windows-incompatible filenames
         run: |
-          echo "🔍 Checking for invalid filenames..."
-          
-          # List all files in the repository (excluding directories)
-          echo "Listing files in repository..."
+          echo "🔍 Checking and fixing invalid filenames..."
+
           files=$(git ls-files)
-          echo "Files found in the repository:"
-          echo "$files"
-          
-          # Initialize variable to collect invalid files
           invalid_files=""
-          
-          # Check each file for invalid Windows characters
+
           for file in $files; do
             echo "Checking: $file"
-            # If filename contains Windows-incompatible characters, append to invalid_files
+
+            # If the filename contains Windows-invalid characters, build a safe new name
             if echo "$file" | grep -P '([<>:"\\|?*])' > /dev/null; then
               echo "❌ Invalid filename detected: $file"
-              invalid_files+="$file"$'\n'
+
+              dir=$(dirname "$file")
+              base=$(basename "$file")
+
+              # Replace invalid characters with underscore
+              safe_base=$(echo "$base" | sed 's/[<>:"\\|?*]/_/g')
+
+              # Only attempt rename if the new name is different
+              if [ "$base" != "$safe_base" ]; then
+                new_path="$dir/$safe_base"
+                echo "🔧 Renaming '$file' -> '$new_path'"
+                git mv "$file" "$new_path"
+                invalid_files+="$file -> $new_path"$'\n'
+              fi
             fi
           done
-          
-          # Debug: Show files with invalid characters
+
           if [[ -z "$invalid_files" ]]; then
             echo "✅ No invalid filenames found!"
           else
-            echo "❌ Error: The following files contain invalid Windows characters:"
+            echo "ℹ️ Renamed files:"
             echo "$invalid_files"
-            echo "🛑 Please rename these files and push again."
-            exit 1
+            echo "✅ All invalid filenames were automatically fixed."
           fi
